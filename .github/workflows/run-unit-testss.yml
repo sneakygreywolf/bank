@@ -1,0 +1,17 @@
+name: run unit tests of feature branches
+
+on:
+  push:
+    branches:
+      'features/*'
+
+jobs: 
+  run-unit-testss:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4.1.7
+
+      - name: run unit tests
+        run: nvm test
